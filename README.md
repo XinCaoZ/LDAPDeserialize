@@ -1,6 +1,6 @@
 ### LDAPDeserialize
 
-此GUI工具为https://github.com/C3P0ooo/LDAPUniserial-tool的图形化版本
+此GUI工具为 https://github.com/C3P0ooo/LDAPUniserial-tool 的图形化版本
 
 ### 插件模式
 
