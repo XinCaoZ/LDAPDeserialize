@@ -1,0 +1,33 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LDAPDeserialize:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LDAPDeserialize_jar</output-path>
+    <root id="archive" name="LDAPDeserialize.jar">
+      <element id="module-output" name="LDAPDeserialize" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/directory/studio/org.apache.commons.io/2.4/org.apache.commons.io-2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/tomcat/tomcat-dbcp/9.0.8/tomcat-dbcp-9.0.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/tomcat/tomcat-annotations-api/9.0.20/tomcat-annotations-api-9.0.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/com/fasterxml/jackson/core/jackson-annotations/2.13.3/jackson-annotations-2.13.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/com/fasterxml/jackson/core/jackson-core/2.13.3/jackson-core-2.13.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/directory/studio/org.apache.commons.codec/1.8/org.apache.commons.codec-1.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/tomcat/tomcat-servlet-api/9.0.20/tomcat-servlet-api-9.0.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/tomcat/tomcat-util/9.0.20/tomcat-util-9.0.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/tomcat/tomcat-catalina/9.0.20/tomcat-catalina-9.0.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/com/alibaba/fastjson/1.2.83/fastjson-1.2.83.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/com/fasterxml/jackson/core/jackson-databind/2.13.3/jackson-databind-2.13.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/commons-codec/commons-codec/1.8/commons-codec-1.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/commons/commons-collections4/4.0/commons-collections4-4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/tomcat/tomcat-el-api/9.0.20/tomcat-el-api-9.0.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/tomcat/tomcat-coyote/9.0.20/tomcat-coyote-9.0.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/tomcat/tomcat-api/9.0.20/tomcat-api-9.0.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/tomcat/tomcat-jaspic-api/9.0.20/tomcat-jaspic-api-9.0.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/tomcat/tomcat-util-scan/9.0.20/tomcat-util-scan-9.0.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/tomcat/tomcat-jsp-api/9.0.20/tomcat-jsp-api-9.0.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/tomcat/tomcat-juli/9.0.20/tomcat-juli-9.0.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/javassist/javassist/3.19.0-GA/javassist-3.19.0-GA.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/commons-io/commons-io/2.4/commons-io-2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/com/unboundid/unboundid-ldapsdk/3.1.1/unboundid-ldapsdk-3.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/org/apache/tomcat/tomcat-jni/9.0.20/tomcat-jni-9.0.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../apache-maven-3.6.3/maven-repo/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
