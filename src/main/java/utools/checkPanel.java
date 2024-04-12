@@ -18,7 +18,7 @@ import static utools.Run.exec;
 import static utools.Service.ds;
 
 public class checkPanel {
-    public static volatile boolean isRunning = true;
+
     public static Object[] checkPanel() {
         JPanel jPanel = new JPanel(new GridLayout(4, 2, 5, 5)); // 使用 GridLayout
 
