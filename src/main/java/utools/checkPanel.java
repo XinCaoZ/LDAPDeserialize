@@ -1,21 +1,19 @@
 package utools;
 
-import com.unboundid.ldap.listener.interceptor.InMemoryInterceptedSearchResult;
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.ParseException;
+import start.ButtonPanel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.net.InetAddress;
-import java.net.Socket;
-import java.net.SocketAddress;
 import java.net.UnknownHostException;
 import java.util.Random;
 
+import static start.ButtonPanel.cmdOptions;
 import static utools.Run.exec;
 import static utools.Service.ds;
 
@@ -111,29 +109,18 @@ public class checkPanel {
     }
     public static JTextArea textArea = new JTextArea();
 
-    public static void listenLDAPServer(String port,Thread listeningThread) {
-        JFrame frame = new JFrame("LDAPListening");
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setSize(400, 300);
-
-
-        String sb = randString();
-        textArea.append("Listening on 0.0.0.0:" + port);
-        textArea.append("\nPayload：ldap://ip:"+port+"/"+sb);
-        textArea.append("\n请将ip换成可以访问的内网或公网地址");
-        JScrollPane scrollPane = new JScrollPane(textArea);
-        frame.getContentPane().add(scrollPane,BorderLayout.CENTER);
-
-        //事件监听
-        frame.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                super.windowClosing(e);
-                //窗口关闭退出线程
-                stopLDAPListening(listeningThread);
-            }
-        });
-        frame.setVisible(true);
+    public static void listenLDAPServer(String port,Thread listeningThread) throws ParseException {
+        String[] args = ButtonPanel.globalArgs;
+        CommandLine cmd = cmdOptions(args);
+        if (!cmd.hasOption("c")){
+            guiPanel(port, listeningThread);
+        }
+        else {
+            String sb = randString();
+            System.out.println("Listening on 0.0.0.0:" + port);
+            System.out.println("\nPayload：ldap://ip:"+port+"/"+sb);
+            System.out.println("\n请将ip换成可以访问的内网或公网地址");
+        }
     }
     public static void listenHTTPServer(String port,Thread listeningThread) throws UnknownHostException {
         JFrame frame = new JFrame("HTTPListening");
@@ -190,5 +177,30 @@ public class checkPanel {
             exec.destroy();
             listeningThread.interrupt();
         }
+    }
+
+    private static void guiPanel(String port,Thread listeningThread) {
+        JFrame frame = new JFrame("LDAPListening");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(400, 300);
+        String sb = randString();
+        textArea.append("Listening on 0.0.0.0:" + port);
+        textArea.append("\nPayload：ldap://ip:"+port+"/"+sb);
+        textArea.append("\n请将ip换成可以访问的内网或公网地址");
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        frame.getContentPane().add(scrollPane,BorderLayout.CENTER);
+        //事件监听
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+                if (textArea != null){
+                    textArea.setText("");
+                }
+                //窗口关闭退出线程
+                stopLDAPListening(listeningThread);
+            }
+        });
+        frame.setVisible(true);
     }
 }

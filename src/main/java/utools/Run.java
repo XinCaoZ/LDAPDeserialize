@@ -1,5 +1,7 @@
 package utools;
 
+import org.apache.commons.cli.CommandLine;
+import start.ButtonPanel;
 import util.CC4;
 import util.Gadget;
 
@@ -7,12 +9,16 @@ import java.io.*;
 import java.net.UnknownHostException;
 import java.util.Base64;
 
+import static start.ButtonPanel.cmdOptions;
 import static utools.Service.launchLDAPServer;
 import static utools.checkPanel.listenHTTPServer;
 
 public class Run {
     public static Process exec;
     public static void other() throws Exception {
+        String[] args = ButtonPanel.globalArgs;
+        CommandLine cmd = cmdOptions(args);
+        if (!cmd.hasOption("c")){
         Object[] result = checkPanel.checkPanel();
         String port = (String) result[0];
         String selectedOption = (String) result[1];
@@ -43,6 +49,7 @@ public class Run {
                         break;
                 }
                 break;
+        }
         }
     }
     public static void pop() throws Exception{
